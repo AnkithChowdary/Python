@@ -32,5 +32,15 @@ print()
 # Reverse List
 sub.reverse()
 print_list(sub)
+print()
 
+#copy list
+li2=li.copy()
+print(li2)
+sub.sort()
+print(sub)
+sub.append(5);
+
+print(sub.count(5))
+print(sub.index(5))
 
