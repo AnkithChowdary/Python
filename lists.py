@@ -3,7 +3,7 @@ def print_list(li):
     print(num,end=" ")
 
 
-
+print("Hello world")
 
 li=[1,2,3,4,5,6]
 # Step of 3
