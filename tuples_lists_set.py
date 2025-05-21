@@ -4,7 +4,7 @@ t=(1,2,3,4,5);
 l=[1,2,3,4,5];
 # Sets: mutable, unordered, no duplicate elements
 s={1,2,3,4,5};
-t.append(6);
+
 print(t);
 l.append(6);
 print(l);
