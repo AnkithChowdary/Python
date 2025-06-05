@@ -5,10 +5,11 @@ for num in doubled:
   print(num)
 
 friends=["Suresh","Karan","Saurabh","Saint"]
-s_friend=[]
-for friend in friends:
-  if friend.startswith("S"):
-    s_friend.append(friend)
+# s_friend=[]
+# for friend in friends:
+#   if friend.startswith("S"):
+#     s_friend.append(friend)
+s_friend=[friend for friend in friends if friend.startswith("S")]
 
 friends_2=[]
 
