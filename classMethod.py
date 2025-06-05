@@ -11,8 +11,13 @@ class Book:
     
     @classmethod
     def hardcover(cls,name,page_weight):
-        return Book(name,Book.TYPES[0],page_weight+100)
+        return cls(name,cls.TYPES[0],page_weight+100)
+    
+    @classmethod
+    def paperback(cls,name,page_weight):
+        return cls(name,cls.TYPES[1],page_weight)
 
-book=Book("Harry potter","hardcover",1500)
-
+book=Book.hardcover("Harry potter",1500)
+light=Book.paperback("Python 101",600)
 print(book)
+print(light)
