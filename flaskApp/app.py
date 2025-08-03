@@ -3,7 +3,7 @@ from flask import Flask,request
 app=Flask(__name__)
 
 stores=[{
-  "name":"My Store",
+  "name":"MyStore",
   "items":[{
       "name":"chair",
       "price":15.99
@@ -22,6 +22,7 @@ def create_store():
     stores.append(new_store)
     return new_store, 201
 
+
 @app.post("/store/<string:name>/item")
 def create_item(name):
     request_data=request.get_json()
@@ -31,3 +32,17 @@ def create_item(name):
             store["items"].append(new_item)
             return new_item, 201
     return {"message": "Store not found"}, 404
+
+@app.get("/store/<string:name>")
+def get_single_store(name):
+    for store in stores:
+        if store["name"]==name:
+            return store
+    return {"message": "store not found"}, 404
+
+@app.get("/store/<string:name>/item")
+def get_item_in_store(name):
+    for store in stores:
+        if store["name"]==name:
+            return {"items": store["items"]}
+    return {"message": "store not found"}, 404
